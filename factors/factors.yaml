@@ -1,0 +1,313 @@
+# Structory Carbon — facteurs d'impact
+#
+# Règles (voir METHODOLOGIE.md, section 5) :
+# - chaque facteur porte : valeur, unité, source, URL, date d'accès, version de la source ;
+# - aucun facteur n'est inventé : sans source vérifiable, `value: null` et `status: A_SOURCER` ;
+# - `min` / `max`, quand ils existent, viennent de la source elle-même (pas d'une estimation maison) ;
+# - un facteur `status: DERIVE` est calculé à partir de facteurs sourcés, la formule est donnée.
+#
+# Toute modification d'une valeur = nouvelle version de ce fichier (champ `version` ci-dessous).
+
+version: "2026.10.0"
+updated: "2026-10-07"
+
+factors:
+
+  # ---------------------------------------------------------------- électricité
+  grid_intensity_fr:
+    description: Intensité carbone de l'électricité, France, mix moyen consommation (ACV, amont inclus)
+    value: 0.0461
+    unit: kgCO2e/kWh
+    status: SOURCE
+    source: ADEME Base Empreinte — « Electricité/2025 - mix moyen/consommation » (lissage 2022-2025), cité par la documentation Nos Gestes Climat (ADEME)
+    url: https://nosgestesclimat.fr/documentation/commun/mix-électrique/empreinte-carbone
+    accessed: "2026-10-07"
+    source_version: Base Empreinte, millésime électricité 2025
+    note: Valeur relevée via la documentation publique Nos Gestes Climat ; à recouper directement dans base-empreinte.ademe.fr (accès compte).
+
+  grid_intensity_eu27:
+    description: Intensité carbone de la production d'électricité, Union européenne (27), cycle de vie
+    value: 0.20990
+    unit: kgCO2e/kWh
+    status: SOURCE
+    source: Our World in Data, « Carbon intensity of electricity generation » (données Ember 2026 ; Energy Institute 2026), année 2025 = 209.89671 gCO2e/kWh
+    url: https://ourworldindata.org/grapher/carbon-intensity-electricity
+    accessed: "2026-10-07"
+    source_version: OWID grapher, export CSV du 2026-10-07, année 2025
+
+  grid_intensity_world:
+    description: Intensité carbone de la production d'électricité, moyenne mondiale, cycle de vie
+    value: 0.45829
+    unit: kgCO2e/kWh
+    status: SOURCE
+    source: Our World in Data, « Carbon intensity of electricity generation » (Ember 2026), année 2025 = 458.29 gCO2e/kWh
+    url: https://ourworldindata.org/grapher/carbon-intensity-electricity
+    accessed: "2026-10-07"
+    source_version: OWID grapher, export CSV du 2026-10-07, année 2025
+
+  grid_intensity_us:
+    description: Intensité carbone de la production d'électricité, États-Unis, cycle de vie
+    value: 0.3844
+    unit: kgCO2e/kWh
+    status: SOURCE
+    source: Our World in Data, « Carbon intensity of electricity generation » (Ember 2026), année 2025 = 384.4 gCO2e/kWh
+    url: https://ourworldindata.org/grapher/carbon-intensity-electricity
+    accessed: "2026-10-07"
+    source_version: OWID grapher, export CSV du 2026-10-07, année 2025
+
+  grid_intensity_ie:
+    description: Intensité carbone de la production d'électricité, Irlande (région cloud UE fréquente), cycle de vie
+    value: 0.25654
+    unit: kgCO2e/kWh
+    status: SOURCE
+    source: Our World in Data, « Carbon intensity of electricity generation » (Ember 2026), année 2025 = 256.54 gCO2e/kWh
+    url: https://ourworldindata.org/grapher/carbon-intensity-electricity
+    accessed: "2026-10-07"
+    source_version: OWID grapher, export CSV du 2026-10-07, année 2025
+
+  # ---------------------------------------------------------------- PUE
+  pue_industry_avg:
+    description: PUE moyen déclaré des centres de données (toutes tailles), enquête mondiale
+    value: 1.56
+    unit: sans unité
+    status: SOURCE
+    source: Uptime Institute, Global Data Center Survey 2024 (14e édition) — « industry average PUE remains at 1.56 »
+    url: https://www.datacenterknowledge.com/energy-power-supply/data-center-industry-survey-highlights-cost-ai-and-sustainability-challenges
+    accessed: "2026-10-07"
+    source_version: Uptime Institute Global Data Center Survey 2024
+
+  pue_aws:
+    description: PUE moyen retenu pour AWS
+    value: 1.135
+    unit: sans unité
+    status: SOURCE
+    source: Cloud Carbon Footprint (Thoughtworks), AWS_CLOUD_CONSTANTS.PUE_AVG
+    url: https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  pue_google:
+    description: PUE annuel moyen de la flotte de centres de données Google (TTM)
+    value: 1.09
+    unit: sans unité
+    status: SOURCE
+    source: Google Data Centers — Efficiency, « In 2025, the average annual power usage effectiveness for our global fleet of data centers was 1.09 »
+    url: https://datacenters.google/efficiency/
+    accessed: "2026-10-07"
+    source_version: rapport 2025
+
+  # ---------------------------------------------------------------- stockage (énergie)
+  storage_ssd_energy:
+    description: Énergie d'usage du stockage SSD, par To stocké (hors PUE, hors réplication)
+    value: 1.2
+    unit: Wh/(To·h)
+    status: SOURCE
+    source: Cloud Carbon Footprint, méthodologie, SSDCOEFFICIENT
+    url: https://www.cloudcarbonfootprint.org/docs/methodology/
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  storage_hdd_energy:
+    description: Énergie d'usage du stockage HDD, par To stocké (hors PUE, hors réplication)
+    value: 0.65
+    unit: Wh/(To·h)
+    status: SOURCE
+    source: Cloud Carbon Footprint, méthodologie, HDDCOEFFICIENT
+    url: https://www.cloudcarbonfootprint.org/docs/methodology/
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  # ---------------------------------------------------------------- réplication
+  replication_aws_s3:
+    description: Facteur de réplication retenu pour AWS S3 (standard)
+    value: 6
+    unit: copies
+    status: SOURCE
+    source: Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.S3
+    url: https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  replication_aws_rds_multi_az:
+    description: Facteur de réplication retenu pour une base AWS RDS Multi-AZ
+    value: 2
+    unit: copies
+    status: SOURCE
+    source: Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.RDS_MULTI_AZ
+    url: https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  replication_aws_rds_aurora:
+    description: Facteur de réplication retenu pour AWS RDS Aurora
+    value: 6
+    unit: copies
+    status: SOURCE
+    source: Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.RDS_AURORA
+    url: https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  replication_aws_rds_backup:
+    description: Facteur de réplication retenu pour les sauvegardes AWS RDS
+    value: 3
+    unit: copies
+    status: SOURCE
+    source: Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.RDS_BACKUP
+    url: https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  replication_gcp_cloud_storage:
+    description: Facteur de réplication retenu pour Google Cloud Storage (mono/bi/multi-région)
+    value: 2
+    unit: copies
+    status: SOURCE
+    source: Cloud Carbon Footprint, GCP_CLOUD_CONSTANTS.REPLICATION_FACTORS.CLOUD_STORAGE_*
+    url: https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/gcp/src/domain/GcpFootprintEstimationConstants.ts
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  replication_google_drive:
+    description: Facteur de réplication réel de Google Drive / Google Workspace (stockage BYOS typique)
+    value: null
+    unit: copies
+    status: A_SOURCER
+    source: Google ne publie pas ce facteur. Aucune source vérifiable trouvée au 2026-10-07.
+    url: null
+    accessed: "2026-10-07"
+    source_version: null
+    note: >
+      Le calcul utilise alors l'hypothèse `byos.replication` du profil (déclarée comme HYPOTHESE
+      dans le rapport). Proxy proposé dans l'exemple : replication_gcp_cloud_storage (2), qui est
+      un facteur CCF pour Cloud Storage, pas pour Drive.
+
+  # ---------------------------------------------------------------- compute (énergie)
+  cpu_min_watts_aws:
+    description: Puissance par vCPU à 0 % d'utilisation, moyenne AWS
+    value: 0.74
+    unit: W/vCPU
+    status: SOURCE
+    source: Cloud Carbon Footprint, méthodologie, AWS Average Min Watts
+    url: https://www.cloudcarbonfootprint.org/docs/methodology/
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  cpu_max_watts_aws:
+    description: Puissance par vCPU à 100 % d'utilisation, moyenne AWS
+    value: 3.5
+    unit: W/vCPU
+    status: SOURCE
+    source: Cloud Carbon Footprint, méthodologie, AWS Average Max Watts
+    url: https://www.cloudcarbonfootprint.org/docs/methodology/
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  memory_energy:
+    description: Énergie d'usage de la mémoire vive allouée
+    value: 0.000392
+    unit: kWh/(Go·h)
+    status: SOURCE
+    source: Cloud Carbon Footprint, méthodologie, MEMORY_COEFFICIENT
+    url: https://www.cloudcarbonfootprint.org/docs/methodology/
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  # ---------------------------------------------------------------- réseau
+  network_inter_dc_energy:
+    description: Énergie des échanges de données entre centres de données (réplication inter-régions)
+    value: 0.001
+    unit: kWh/Go
+    status: SOURCE
+    source: Cloud Carbon Footprint, méthodologie, NETWORKING_COEFFICIENT
+    url: https://www.cloudcarbonfootprint.org/docs/methodology/
+    accessed: "2026-10-07"
+    source_version: CCF trunk @ f584c549 (2026-04-23)
+
+  network_end_user_energy:
+    description: Énergie du transport de données vers l'utilisateur final (Internet, accès)
+    value: null
+    unit: kWh/Go
+    status: A_SOURCER
+    source: Pas de valeur consensuelle récente retenue (les estimations publiées varient de plus d'un ordre de grandeur selon l'année et la méthode).
+    url: null
+    accessed: "2026-10-07"
+    source_version: null
+    note: Non utilisé en V0.1 — trafic utilisateur supposé équivalent dans les deux architectures (voir METHODOLOGIE.md, poste réseau).
+
+  # ---------------------------------------------------------------- fabrication (embodied)
+  embodied_vcpu_year_aws_t3_medium:
+    description: Impact de fabrication alloué à un vCPU pendant un an (instance AWS t3.medium, 2 vCPU, divisé par 2)
+    value: 1.35
+    min: 0.797
+    max: 2.11
+    unit: kgCO2e/(vCPU·an)
+    status: SOURCE
+    source: >
+      API Boavizta v2.4.1, GET /v1/cloud/instance?provider=aws&instance_type=t3.medium&duration=8760&criteria=gwp
+      → embedded gwp 2.7 kgCO2e (min 1.594, max 4.22) pour 2 vCPU sur 8760 h ; fin de vie non incluse.
+    url: https://api.boavizta.org/v1/cloud/instance?provider=aws&instance_type=t3.medium&verbose=false&duration=8760&criteria=gwp
+    accessed: "2026-10-07"
+    source_version: Boavizta API 2.4.1
+
+  embodied_hdd_unit:
+    description: Impact de fabrication d'un disque dur (HDD), par unité
+    value: 31.11
+    unit: kgCO2e/disque
+    status: SOURCE
+    source: Boavizta API, documentation composant HDD, d'après Umweltbundesamt « Green Cloud Computing » (2021)
+    url: https://doc.api.boavizta.org/Explanations/components/hdd/
+    accessed: "2026-10-07"
+    source_version: Boavizta API 2.4.1 ; UBA Texte 94/2021
+
+  embodied_ssd_die:
+    description: Impact de fabrication d'un SSD, part proportionnelle à la surface de puce
+    value: 2.20
+    unit: kgCO2e/cm²
+    status: SOURCE
+    source: Boavizta API, documentation composant SSD, d'après Umweltbundesamt « Green Cloud Computing » (2021)
+    url: https://doc.api.boavizta.org/Explanations/components/ssd/
+    accessed: "2026-10-07"
+    source_version: Boavizta API 2.4.1 ; UBA Texte 94/2021
+
+  embodied_ssd_base:
+    description: Impact de fabrication d'un SSD, part fixe par unité
+    value: 6.34
+    unit: kgCO2e/SSD
+    status: SOURCE
+    source: Boavizta API, documentation composant SSD, d'après Umweltbundesamt « Green Cloud Computing » (2021)
+    url: https://doc.api.boavizta.org/Explanations/components/ssd/
+    accessed: "2026-10-07"
+    source_version: Boavizta API 2.4.1 ; UBA Texte 94/2021
+
+  ssd_density:
+    description: Densité de stockage d'un SSD (valeur d'exemple du jeu de données Boavizta)
+    value: 48.5
+    unit: Go/cm²
+    status: SOURCE
+    source: Boavizta API, documentation composant SSD (valeur par défaut)
+    url: https://doc.api.boavizta.org/Explanations/components/ssd/
+    accessed: "2026-10-07"
+    source_version: Boavizta API 2.4.1
+
+  embodied_ssd_per_tb:
+    description: Impact de fabrication d'un SSD de 1 To (1000 Go)
+    value: 51.70
+    unit: kgCO2e/To
+    status: DERIVE
+    formula: (1000 / ssd_density) * embodied_ssd_die + embodied_ssd_base = (1000 / 48.5) * 2.20 + 6.34
+    source: Calculé à partir des facteurs Boavizta ci-dessus (équation de la documentation SSD Boavizta, capacité 1000 Go)
+    url: https://doc.api.boavizta.org/Explanations/components/ssd/
+    accessed: "2026-10-07"
+    source_version: Boavizta API 2.4.1
+
+  hdd_capacity_datacenter:
+    description: Capacité moyenne d'un disque dur en centre de données (pour ramener embodied_hdd_unit au To)
+    value: null
+    unit: To/disque
+    status: A_SOURCER
+    source: Aucune source vérifiable d'une capacité moyenne de parc trouvée au 2026-10-07.
+    url: null
+    accessed: "2026-10-07"
+    source_version: null
+    note: "Tant qu'il est nul, le calcul V0.1 ne traite l'embodied stockage que pour les supports SSD ; un profil `media: hdd` lève une erreur explicite."
