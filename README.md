@@ -1,6 +1,7 @@
-# Structory Carbon (BYOS Carbon)
+# Structory Green
 
-Module open source (Apache-2.0) qui estime les émissions de gaz à effet de serre **évitées**
+Module open source (Apache-2.0) d'indicateurs environnementaux pour Structory. Le premier
+indicateur est le **carbone** : le module estime les émissions de gaz à effet de serre **évitées**
 (en kg CO2e par an) quand une organisation garde ses données dans **son propre stockage**
 (architecture BYOS / « Own Storage first » de Structory) au lieu de les confier à une
 application SaaS qui les recopie dans sa propre infrastructure.
@@ -50,9 +51,9 @@ python -m venv .venv && . .venv/bin/activate
 pip install -e ".[test]"
 
 # calcul sur le profil d'exemple : écrit un rapport Markdown et un rapport JSON
-structory-carbon examples/org_exemple.yaml --out examples/
+structory-green examples/org_exemple.yaml --out examples/
 # ou sans installation :
-python -m structory_carbon examples/org_exemple.yaml --out examples/
+python -m structory_green examples/org_exemple.yaml --out examples/
 
 # tests
 pytest
@@ -68,7 +69,7 @@ facteurs.
 ```
 METHODOLOGIE.md          périmètre, équation, hypothèses, limites
 factors/factors.yaml     facteurs d'impact sourcés et versionnés
-structory_carbon/        bibliothèque Python + CLI
+structory_green/        bibliothèque Python + CLI
 tests/                   tests pytest
 examples/                profil d'exemple et rapports générés
 ```
