@@ -1,0 +1,967 @@
+{
+  "outil": "structory-carbon",
+  "version_outil": "0.1.0",
+  "version_facteurs": "2026.10.0",
+  "organisation": "Organisation exemple (fictive)",
+  "unite": "kgCO2e/an",
+  "fourchette_evite_kgco2e": {
+    "bas": 0.40571840804333714,
+    "central": 0.9188103793381651,
+    "haut": 3.5278396626381476
+  },
+  "resultats": {
+    "central": {
+      "scenario": "central",
+      "bounds": {},
+      "volumes_gb": {
+        "journal_annuel": 0.036,
+        "journal_total": 0.10799999999999998,
+        "saas_physique": 32.160000000000004,
+        "byos_physique_marginal": 0.21599999999999997
+      },
+      "saas_kgco2e": {
+        "stockage": 0.0159651824813568,
+        "replication_sauvegardes": 0.08114818212149759,
+        "environnements": 0.0013222697147135998,
+        "compute": 0.41657617632528,
+        "reseau": 0.00120984264,
+        "fabrication": 0.4135344,
+        "total": 0.929756053282848
+      },
+      "byos_kgco2e": {
+        "stockage": 0.000259745507136,
+        "replication_sauvegardes": 0.000259745507136,
+        "environnements": 0.0,
+        "compute": 0.006644090640000001,
+        "reseau": 7.5564e-06,
+        "fabrication": 0.0037745358904109584,
+        "total": 0.01094567394468296
+      },
+      "evite_kgco2e": {
+        "stockage": 0.0157054369742208,
+        "replication_sauvegardes": 0.08088843661436158,
+        "environnements": 0.0013222697147135998,
+        "compute": 0.40993208568528,
+        "reseau": 0.00120228624,
+        "fabrication": 0.4097598641095891,
+        "total": 0.9188103793381651
+      },
+      "parametres": {
+        "unite_fonctionnelle.entries_per_month": {
+          "value": 2000.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.bytes_per_entry": {
+          "value": 1500.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.history_years": {
+          "value": 3.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.attachments_gb": {
+          "value": 5.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.attachments_new_gb_per_year": {
+          "value": 1.5,
+          "kind": "HYPOTHESE"
+        },
+        "saas.grid": {
+          "value": 0.25654,
+          "kind": "FACTEUR",
+          "factor": "grid_intensity_ie",
+          "bound": null
+        },
+        "saas.pue": {
+          "value": 1.135,
+          "kind": "FACTEUR",
+          "factor": "pue_aws",
+          "bound": null
+        },
+        "saas.derived_overhead": {
+          "value": 1.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.replication_db": {
+          "value": 2.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_rds_multi_az",
+          "bound": null
+        },
+        "saas.replication_backup": {
+          "value": 3.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_rds_backup",
+          "bound": null
+        },
+        "saas.replication_objects": {
+          "value": 6.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_s3",
+          "bound": null
+        },
+        "saas.backup_copies": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.non_prod_env_copies": {
+          "value": 1.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.org_share": {
+          "value": 0.005,
+          "kind": "HYPOTHESE"
+        },
+        "saas.storage_lifetime_years": {
+          "value": 5.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.grid": {
+          "value": 0.2099,
+          "kind": "FACTEUR",
+          "factor": "grid_intensity_eu27",
+          "bound": null
+        },
+        "byos.pue": {
+          "value": 1.09,
+          "kind": "FACTEUR",
+          "factor": "pue_google",
+          "bound": null
+        },
+        "byos.replication": {
+          "value": 2.0,
+          "kind": "FACTEUR",
+          "factor": "replication_gcp_cloud_storage",
+          "bound": null
+        },
+        "byos.storage_lifetime_years": {
+          "value": 5.0,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.storage_ssd_energy": {
+          "value": 1.2,
+          "kind": "FACTEUR",
+          "factor": "storage_ssd_energy",
+          "bound": null
+        },
+        "facteur.memory_energy": {
+          "value": 0.000392,
+          "kind": "FACTEUR",
+          "factor": "memory_energy",
+          "bound": null
+        },
+        "saas.environments[0].vcpu": {
+          "value": 8.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[0].memory_gb": {
+          "value": 32.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[0].utilization": {
+          "value": 0.2,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.cpu_min_watts_aws": {
+          "value": 0.74,
+          "kind": "FACTEUR",
+          "factor": "cpu_min_watts_aws",
+          "bound": null
+        },
+        "facteur.cpu_max_watts_aws": {
+          "value": 3.5,
+          "kind": "FACTEUR",
+          "factor": "cpu_max_watts_aws",
+          "bound": null
+        },
+        "saas.environments[1].vcpu": {
+          "value": 4.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[1].memory_gb": {
+          "value": 16.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[1].utilization": {
+          "value": 0.05,
+          "kind": "HYPOTHESE"
+        },
+        "byos.vcpu_hours_per_year": {
+          "value": 10.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.memory_gb_per_vcpu": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.utilization": {
+          "value": 0.5,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.network_inter_dc_energy": {
+          "value": 0.001,
+          "kind": "FACTEUR",
+          "factor": "network_inter_dc_energy",
+          "bound": null
+        },
+        "facteur.embodied_vcpu_year_aws_t3_medium": {
+          "value": 1.35,
+          "kind": "FACTEUR",
+          "factor": "embodied_vcpu_year_aws_t3_medium",
+          "bound": null
+        },
+        "facteur.embodied_ssd_per_tb": {
+          "value": 51.7,
+          "kind": "FACTEUR",
+          "factor": "embodied_ssd_per_tb",
+          "bound": null
+        }
+      }
+    },
+    "bas": {
+      "scenario": "bas",
+      "bounds": {
+        "embodied_vcpu_year_aws_t3_medium": "min"
+      },
+      "volumes_gb": {
+        "journal_annuel": 0.036,
+        "journal_total": 0.10799999999999998,
+        "saas_physique": 30.81,
+        "byos_physique_marginal": 0.6479999999999999
+      },
+      "saas_kgco2e": {
+        "stockage": 0.0157998987670176,
+        "replication_sauvegardes": 0.0785036426920704,
+        "environnements": 0.0,
+        "compute": 0.083315235265056,
+        "reseau": 0.00079732632,
+        "fabrication": 0.2750435,
+        "total": 0.453459603044144
+      },
+      "byos_kgco2e": {
+        "stockage": 0.000259745507136,
+        "replication_sauvegardes": 0.0012987275356799997,
+        "environnements": 0.0,
+        "compute": 0.03322045320000001,
+        "reseau": 3.7782e-05,
+        "fabrication": 0.012924486757990867,
+        "total": 0.047741195000806876
+      },
+      "evite_kgco2e": {
+        "stockage": 0.015540153259881598,
+        "replication_sauvegardes": 0.0772049151563904,
+        "environnements": 0.0,
+        "compute": 0.050094782065056,
+        "reseau": 0.00075954432,
+        "fabrication": 0.26211901324200915,
+        "total": 0.40571840804333714
+      },
+      "parametres": {
+        "unite_fonctionnelle.entries_per_month": {
+          "value": 2000.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.bytes_per_entry": {
+          "value": 1500.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.history_years": {
+          "value": 3.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.attachments_gb": {
+          "value": 5.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.attachments_new_gb_per_year": {
+          "value": 1.5,
+          "kind": "HYPOTHESE"
+        },
+        "saas.grid": {
+          "value": 0.25654,
+          "kind": "FACTEUR",
+          "factor": "grid_intensity_ie",
+          "bound": null
+        },
+        "saas.pue": {
+          "value": 1.135,
+          "kind": "FACTEUR",
+          "factor": "pue_aws",
+          "bound": null
+        },
+        "saas.derived_overhead": {
+          "value": 0.5,
+          "kind": "HYPOTHESE"
+        },
+        "saas.replication_db": {
+          "value": 2.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_rds_multi_az",
+          "bound": null
+        },
+        "saas.replication_backup": {
+          "value": 3.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_rds_backup",
+          "bound": null
+        },
+        "saas.replication_objects": {
+          "value": 6.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_s3",
+          "bound": null
+        },
+        "saas.backup_copies": {
+          "value": 1.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.non_prod_env_copies": {
+          "value": 0.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.org_share": {
+          "value": 0.001,
+          "kind": "HYPOTHESE"
+        },
+        "saas.storage_lifetime_years": {
+          "value": 6.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.grid": {
+          "value": 0.2099,
+          "kind": "FACTEUR",
+          "factor": "grid_intensity_eu27",
+          "bound": null
+        },
+        "byos.pue": {
+          "value": 1.09,
+          "kind": "FACTEUR",
+          "factor": "pue_google",
+          "bound": null
+        },
+        "byos.replication": {
+          "value": 6.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_s3",
+          "bound": null
+        },
+        "byos.storage_lifetime_years": {
+          "value": 4.0,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.storage_ssd_energy": {
+          "value": 1.2,
+          "kind": "FACTEUR",
+          "factor": "storage_ssd_energy",
+          "bound": null
+        },
+        "facteur.memory_energy": {
+          "value": 0.000392,
+          "kind": "FACTEUR",
+          "factor": "memory_energy",
+          "bound": null
+        },
+        "saas.environments[0].vcpu": {
+          "value": 8.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[0].memory_gb": {
+          "value": 32.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[0].utilization": {
+          "value": 0.2,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.cpu_min_watts_aws": {
+          "value": 0.74,
+          "kind": "FACTEUR",
+          "factor": "cpu_min_watts_aws",
+          "bound": null
+        },
+        "facteur.cpu_max_watts_aws": {
+          "value": 3.5,
+          "kind": "FACTEUR",
+          "factor": "cpu_max_watts_aws",
+          "bound": null
+        },
+        "saas.environments[1].vcpu": {
+          "value": 4.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[1].memory_gb": {
+          "value": 16.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[1].utilization": {
+          "value": 0.05,
+          "kind": "HYPOTHESE"
+        },
+        "byos.vcpu_hours_per_year": {
+          "value": 50.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.memory_gb_per_vcpu": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.utilization": {
+          "value": 0.5,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.network_inter_dc_energy": {
+          "value": 0.001,
+          "kind": "FACTEUR",
+          "factor": "network_inter_dc_energy",
+          "bound": null
+        },
+        "facteur.embodied_vcpu_year_aws_t3_medium": {
+          "value": 0.797,
+          "kind": "FACTEUR",
+          "factor": "embodied_vcpu_year_aws_t3_medium",
+          "bound": "min"
+        },
+        "facteur.embodied_ssd_per_tb": {
+          "value": 51.7,
+          "kind": "FACTEUR",
+          "factor": "embodied_ssd_per_tb",
+          "bound": null
+        }
+      }
+    },
+    "haut": {
+      "scenario": "haut",
+      "bounds": {
+        "embodied_vcpu_year_aws_t3_medium": "max"
+      },
+      "volumes_gb": {
+        "journal_annuel": 0.036,
+        "journal_total": 0.10799999999999998,
+        "saas_physique": 42.635999999999996,
+        "byos_physique_marginal": 0.21599999999999997
+      },
+      "saas_kgco2e": {
+        "stockage": 0.022397682695731197,
+        "replication_sauvegardes": 0.14061234906501122,
+        "environnements": 0.016356534620774396,
+        "compute": 2.29025140111872,
+        "reseau": 0.00495019584,
+        "fabrication": 1.0574702999999999,
+        "total": 3.532038463340237
+      },
+      "byos_kgco2e": {
+        "stockage": 0.000259745507136,
+        "replication_sauvegardes": 0.000259745507136,
+        "environnements": 0.0,
+        "compute": 0.0013288181280000002,
+        "reseau": 7.5564e-06,
+        "fabrication": 0.002342935159817351,
+        "total": 0.004198800702089351
+      },
+      "evite_kgco2e": {
+        "stockage": 0.0221379371885952,
+        "replication_sauvegardes": 0.1403526035578752,
+        "environnements": 0.016356534620774396,
+        "compute": 2.28892258299072,
+        "reseau": 0.00494263944,
+        "fabrication": 1.0551273648401824,
+        "total": 3.5278396626381476
+      },
+      "parametres": {
+        "unite_fonctionnelle.entries_per_month": {
+          "value": 2000.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.bytes_per_entry": {
+          "value": 1500.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.history_years": {
+          "value": 3.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.attachments_gb": {
+          "value": 5.0,
+          "kind": "HYPOTHESE"
+        },
+        "unite_fonctionnelle.attachments_new_gb_per_year": {
+          "value": 1.5,
+          "kind": "HYPOTHESE"
+        },
+        "saas.grid": {
+          "value": 0.25654,
+          "kind": "FACTEUR",
+          "factor": "grid_intensity_ie",
+          "bound": null
+        },
+        "saas.pue": {
+          "value": 1.56,
+          "kind": "FACTEUR",
+          "factor": "pue_industry_avg",
+          "bound": null
+        },
+        "saas.derived_overhead": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.replication_db": {
+          "value": 6.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_rds_aurora",
+          "bound": null
+        },
+        "saas.replication_backup": {
+          "value": 3.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_rds_backup",
+          "bound": null
+        },
+        "saas.replication_objects": {
+          "value": 6.0,
+          "kind": "FACTEUR",
+          "factor": "replication_aws_s3",
+          "bound": null
+        },
+        "saas.backup_copies": {
+          "value": 7.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.non_prod_env_copies": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.org_share": {
+          "value": 0.02,
+          "kind": "HYPOTHESE"
+        },
+        "saas.storage_lifetime_years": {
+          "value": 4.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.grid": {
+          "value": 0.2099,
+          "kind": "FACTEUR",
+          "factor": "grid_intensity_eu27",
+          "bound": null
+        },
+        "byos.pue": {
+          "value": 1.09,
+          "kind": "FACTEUR",
+          "factor": "pue_google",
+          "bound": null
+        },
+        "byos.replication": {
+          "value": 2.0,
+          "kind": "FACTEUR",
+          "factor": "replication_gcp_cloud_storage",
+          "bound": null
+        },
+        "byos.storage_lifetime_years": {
+          "value": 6.0,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.storage_ssd_energy": {
+          "value": 1.2,
+          "kind": "FACTEUR",
+          "factor": "storage_ssd_energy",
+          "bound": null
+        },
+        "facteur.memory_energy": {
+          "value": 0.000392,
+          "kind": "FACTEUR",
+          "factor": "memory_energy",
+          "bound": null
+        },
+        "saas.environments[0].vcpu": {
+          "value": 8.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[0].memory_gb": {
+          "value": 32.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[0].utilization": {
+          "value": 0.2,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.cpu_min_watts_aws": {
+          "value": 0.74,
+          "kind": "FACTEUR",
+          "factor": "cpu_min_watts_aws",
+          "bound": null
+        },
+        "facteur.cpu_max_watts_aws": {
+          "value": 3.5,
+          "kind": "FACTEUR",
+          "factor": "cpu_max_watts_aws",
+          "bound": null
+        },
+        "saas.environments[1].vcpu": {
+          "value": 4.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[1].memory_gb": {
+          "value": 16.0,
+          "kind": "HYPOTHESE"
+        },
+        "saas.environments[1].utilization": {
+          "value": 0.05,
+          "kind": "HYPOTHESE"
+        },
+        "byos.vcpu_hours_per_year": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.memory_gb_per_vcpu": {
+          "value": 2.0,
+          "kind": "HYPOTHESE"
+        },
+        "byos.utilization": {
+          "value": 0.5,
+          "kind": "HYPOTHESE"
+        },
+        "facteur.network_inter_dc_energy": {
+          "value": 0.001,
+          "kind": "FACTEUR",
+          "factor": "network_inter_dc_energy",
+          "bound": null
+        },
+        "facteur.embodied_vcpu_year_aws_t3_medium": {
+          "value": 2.11,
+          "kind": "FACTEUR",
+          "factor": "embodied_vcpu_year_aws_t3_medium",
+          "bound": "max"
+        },
+        "facteur.embodied_ssd_per_tb": {
+          "value": 51.7,
+          "kind": "FACTEUR",
+          "factor": "embodied_ssd_per_tb",
+          "bound": null
+        }
+      }
+    }
+  },
+  "sensibilite_org_share": [
+    {
+      "valeur": 0.0001,
+      "evite_kgco2e": 0.4311857265393907,
+      "saas_kgco2e": 0.4421314004840736,
+      "byos_kgco2e": 0.01094567394468296
+    },
+    {
+      "valeur": 0.001,
+      "evite_kgco2e": 0.5207494382779411,
+      "saas_kgco2e": 0.531695112222624,
+      "byos_kgco2e": 0.01094567394468296
+    },
+    {
+      "valeur": 0.005,
+      "evite_kgco2e": 0.9188103793381651,
+      "saas_kgco2e": 0.929756053282848,
+      "byos_kgco2e": 0.01094567394468296
+    },
+    {
+      "valeur": 0.02,
+      "evite_kgco2e": 2.4115389083140046,
+      "saas_kgco2e": 2.422484582258688,
+      "byos_kgco2e": 0.01094567394468296
+    },
+    {
+      "valeur": 0.1,
+      "evite_kgco2e": 10.372757729518485,
+      "saas_kgco2e": 10.383703403463167,
+      "byos_kgco2e": 0.01094567394468296
+    },
+    {
+      "valeur": 1.0,
+      "evite_kgco2e": 99.93646946806888,
+      "saas_kgco2e": 99.94741514201357,
+      "byos_kgco2e": 0.01094567394468296
+    }
+  ],
+  "hypotheses": {
+    "unite_fonctionnelle.entries_per_month": {
+      "bas": 2000.0,
+      "central": 2000.0,
+      "haut": 2000.0
+    },
+    "unite_fonctionnelle.bytes_per_entry": {
+      "bas": 1500.0,
+      "central": 1500.0,
+      "haut": 1500.0
+    },
+    "unite_fonctionnelle.history_years": {
+      "bas": 3.0,
+      "central": 3.0,
+      "haut": 3.0
+    },
+    "unite_fonctionnelle.attachments_gb": {
+      "bas": 5.0,
+      "central": 5.0,
+      "haut": 5.0
+    },
+    "unite_fonctionnelle.attachments_new_gb_per_year": {
+      "bas": 1.5,
+      "central": 1.5,
+      "haut": 1.5
+    },
+    "saas.derived_overhead": {
+      "bas": 0.5,
+      "central": 1.0,
+      "haut": 2.0
+    },
+    "saas.backup_copies": {
+      "bas": 1.0,
+      "central": 2.0,
+      "haut": 7.0
+    },
+    "saas.non_prod_env_copies": {
+      "bas": 0.0,
+      "central": 1.0,
+      "haut": 2.0
+    },
+    "saas.org_share": {
+      "bas": 0.001,
+      "central": 0.005,
+      "haut": 0.02
+    },
+    "saas.storage_lifetime_years": {
+      "bas": 6.0,
+      "central": 5.0,
+      "haut": 4.0
+    },
+    "byos.storage_lifetime_years": {
+      "bas": 4.0,
+      "central": 5.0,
+      "haut": 6.0
+    },
+    "saas.environments[0].vcpu": {
+      "bas": 8.0,
+      "central": 8.0,
+      "haut": 8.0
+    },
+    "saas.environments[0].memory_gb": {
+      "bas": 32.0,
+      "central": 32.0,
+      "haut": 32.0
+    },
+    "saas.environments[0].utilization": {
+      "bas": 0.2,
+      "central": 0.2,
+      "haut": 0.2
+    },
+    "saas.environments[1].vcpu": {
+      "bas": 4.0,
+      "central": 4.0,
+      "haut": 4.0
+    },
+    "saas.environments[1].memory_gb": {
+      "bas": 16.0,
+      "central": 16.0,
+      "haut": 16.0
+    },
+    "saas.environments[1].utilization": {
+      "bas": 0.05,
+      "central": 0.05,
+      "haut": 0.05
+    },
+    "byos.vcpu_hours_per_year": {
+      "bas": 50.0,
+      "central": 10.0,
+      "haut": 2.0
+    },
+    "byos.memory_gb_per_vcpu": {
+      "bas": 2.0,
+      "central": 2.0,
+      "haut": 2.0
+    },
+    "byos.utilization": {
+      "bas": 0.5,
+      "central": 0.5,
+      "haut": 0.5
+    }
+  },
+  "facteurs_utilises": {
+    "cpu_max_watts_aws": {
+      "value": 3.5,
+      "min": null,
+      "max": null,
+      "unit": "W/vCPU",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, méthodologie, AWS Average Max Watts",
+      "url": "https://www.cloudcarbonfootprint.org/docs/methodology/",
+      "accessed": "2026-10-07"
+    },
+    "cpu_min_watts_aws": {
+      "value": 0.74,
+      "min": null,
+      "max": null,
+      "unit": "W/vCPU",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, méthodologie, AWS Average Min Watts",
+      "url": "https://www.cloudcarbonfootprint.org/docs/methodology/",
+      "accessed": "2026-10-07"
+    },
+    "embodied_ssd_per_tb": {
+      "value": 51.7,
+      "min": null,
+      "max": null,
+      "unit": "kgCO2e/To",
+      "status": "DERIVE",
+      "source": "Calculé à partir des facteurs Boavizta ci-dessus (équation de la documentation SSD Boavizta, capacité 1000 Go)",
+      "url": "https://doc.api.boavizta.org/Explanations/components/ssd/",
+      "accessed": "2026-10-07"
+    },
+    "embodied_vcpu_year_aws_t3_medium": {
+      "value": 1.35,
+      "min": 0.797,
+      "max": 2.11,
+      "unit": "kgCO2e/(vCPU·an)",
+      "status": "SOURCE",
+      "source": "API Boavizta v2.4.1, GET /v1/cloud/instance?provider=aws&instance_type=t3.medium&duration=8760&criteria=gwp → embedded gwp 2.7 kgCO2e (min 1.594, max 4.22) pour 2 vCPU sur 8760 h ; fin de vie non incluse.",
+      "url": "https://api.boavizta.org/v1/cloud/instance?provider=aws&instance_type=t3.medium&verbose=false&duration=8760&criteria=gwp",
+      "accessed": "2026-10-07"
+    },
+    "grid_intensity_eu27": {
+      "value": 0.2099,
+      "min": null,
+      "max": null,
+      "unit": "kgCO2e/kWh",
+      "status": "SOURCE",
+      "source": "Our World in Data, « Carbon intensity of electricity generation » (données Ember 2026 ; Energy Institute 2026), année 2025 = 209.89671 gCO2e/kWh",
+      "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity",
+      "accessed": "2026-10-07"
+    },
+    "grid_intensity_ie": {
+      "value": 0.25654,
+      "min": null,
+      "max": null,
+      "unit": "kgCO2e/kWh",
+      "status": "SOURCE",
+      "source": "Our World in Data, « Carbon intensity of electricity generation » (Ember 2026), année 2025 = 256.54 gCO2e/kWh",
+      "url": "https://ourworldindata.org/grapher/carbon-intensity-electricity",
+      "accessed": "2026-10-07"
+    },
+    "memory_energy": {
+      "value": 0.000392,
+      "min": null,
+      "max": null,
+      "unit": "kWh/(Go·h)",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, méthodologie, MEMORY_COEFFICIENT",
+      "url": "https://www.cloudcarbonfootprint.org/docs/methodology/",
+      "accessed": "2026-10-07"
+    },
+    "network_inter_dc_energy": {
+      "value": 0.001,
+      "min": null,
+      "max": null,
+      "unit": "kWh/Go",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, méthodologie, NETWORKING_COEFFICIENT",
+      "url": "https://www.cloudcarbonfootprint.org/docs/methodology/",
+      "accessed": "2026-10-07"
+    },
+    "pue_aws": {
+      "value": 1.135,
+      "min": null,
+      "max": null,
+      "unit": "sans unité",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint (Thoughtworks), AWS_CLOUD_CONSTANTS.PUE_AVG",
+      "url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts",
+      "accessed": "2026-10-07"
+    },
+    "pue_google": {
+      "value": 1.09,
+      "min": null,
+      "max": null,
+      "unit": "sans unité",
+      "status": "SOURCE",
+      "source": "Google Data Centers — Efficiency, « In 2025, the average annual power usage effectiveness for our global fleet of data centers was 1.09 »",
+      "url": "https://datacenters.google/efficiency/",
+      "accessed": "2026-10-07"
+    },
+    "pue_industry_avg": {
+      "value": 1.56,
+      "min": null,
+      "max": null,
+      "unit": "sans unité",
+      "status": "SOURCE",
+      "source": "Uptime Institute, Global Data Center Survey 2024 (14e édition) — « industry average PUE remains at 1.56 »",
+      "url": "https://www.datacenterknowledge.com/energy-power-supply/data-center-industry-survey-highlights-cost-ai-and-sustainability-challenges",
+      "accessed": "2026-10-07"
+    },
+    "replication_aws_rds_aurora": {
+      "value": 6.0,
+      "min": null,
+      "max": null,
+      "unit": "copies",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.RDS_AURORA",
+      "url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts",
+      "accessed": "2026-10-07"
+    },
+    "replication_aws_rds_backup": {
+      "value": 3.0,
+      "min": null,
+      "max": null,
+      "unit": "copies",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.RDS_BACKUP",
+      "url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts",
+      "accessed": "2026-10-07"
+    },
+    "replication_aws_rds_multi_az": {
+      "value": 2.0,
+      "min": null,
+      "max": null,
+      "unit": "copies",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.RDS_MULTI_AZ",
+      "url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts",
+      "accessed": "2026-10-07"
+    },
+    "replication_aws_s3": {
+      "value": 6.0,
+      "min": null,
+      "max": null,
+      "unit": "copies",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, AWS_CLOUD_CONSTANTS.REPLICATION_FACTORS.S3",
+      "url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/aws/src/domain/AwsFootprintEstimationConstants.ts",
+      "accessed": "2026-10-07"
+    },
+    "replication_gcp_cloud_storage": {
+      "value": 2.0,
+      "min": null,
+      "max": null,
+      "unit": "copies",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, GCP_CLOUD_CONSTANTS.REPLICATION_FACTORS.CLOUD_STORAGE_*",
+      "url": "https://github.com/cloud-carbon-footprint/cloud-carbon-footprint/blob/f584c549ee358d5980d36513267d007ecd3ee716/packages/gcp/src/domain/GcpFootprintEstimationConstants.ts",
+      "accessed": "2026-10-07"
+    },
+    "storage_ssd_energy": {
+      "value": 1.2,
+      "min": null,
+      "max": null,
+      "unit": "Wh/(To·h)",
+      "status": "SOURCE",
+      "source": "Cloud Carbon Footprint, méthodologie, SSDCOEFFICIENT",
+      "url": "https://www.cloudcarbonfootprint.org/docs/methodology/",
+      "accessed": "2026-10-07"
+    }
+  },
+  "facteurs_a_sourcer": [
+    "replication_google_drive",
+    "network_end_user_energy",
+    "hdd_capacity_datacenter"
+  ],
+  "notes_profil": [
+    "Réplication BYOS : Google ne publie pas le facteur de Drive ; le central utilise le facteur CCF de Google Cloud Storage (2) comme approximation, le bas le facteur S3 (6) par prudence.",
+    "org_share central 0,005 = une plateforme SaaS dont l'infrastructure ci-dessus sert environ 200 organisations.",
+    "Valeurs numériques d'illustration : à remplacer par les données réelles de l'organisation."
+  ]
+}

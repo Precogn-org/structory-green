@@ -1,0 +1,59 @@
+# Profil d'exemple — organisation fictive (petite association / copropriété).
+#
+# Chaque paramètre est :
+#   - un nombre            → HYPOTHESE (affichée comme telle dans le rapport) ;
+#   - un identifiant texte → facteur sourcé de factors/factors.yaml ;
+#   - un triplet {bas, central, haut} de l'un ou l'autre.
+# Convention : `bas` = valeur qui donne le MOINS d'émissions évitées (scénario prudent).
+# Toutes les valeurs numériques ci-dessous sont des hypothèses d'illustration, pas des mesures.
+
+organisation: "Organisation exemple (fictive)"
+
+unite_fonctionnelle:
+  entries_per_month: 2000          # écritures comptables par mois
+  bytes_per_entry: 1500            # octets par écriture dans le journal (ligne + métadonnées)
+  history_years: 3                 # années d'historique conservées
+  attachments_gb: 5                # pièces jointes déjà présentes dans le stockage de l'organisation
+  attachments_new_gb_per_year: 1.5 # pièces jointes ajoutées dans l'année
+
+saas:
+  grid: grid_intensity_ie          # région cloud UE fréquente (Irlande)
+  pue: { bas: pue_aws, central: pue_aws, haut: pue_industry_avg }
+  media: ssd
+  derived_overhead: { bas: 0.5, central: 1.0, haut: 2.0 }   # tables dérivées + index, en fraction du journal
+  replication_db: { bas: replication_aws_rds_multi_az, central: replication_aws_rds_multi_az, haut: replication_aws_rds_aurora }
+  replication_backup: replication_aws_rds_backup
+  replication_objects: replication_aws_s3
+  backup_copies: { bas: 1, central: 2, haut: 7 }            # copies complètes équivalentes en sauvegarde
+  non_prod_env_copies: { bas: 0, central: 1, haut: 2 }      # environnements hors prod avec copie des données
+  org_share: { bas: 0.001, central: 0.005, haut: 0.02 }     # part des serveurs attribuée à l'organisation
+  storage_lifetime_years: { bas: 6, central: 5, haut: 4 }
+  environments:
+    - name: production
+      vcpu: 8
+      memory_gb: 32
+      utilization: 0.2
+    - name: preproduction
+      vcpu: 4
+      memory_gb: 16
+      utilization: 0.05
+
+byos:
+  preexisting_storage: true        # l'organisation a déjà son Google Drive (obligatoire en V0.1)
+  grid: grid_intensity_eu27        # localisation réelle du stockage Google non connue : moyenne UE
+  pue: pue_google
+  media: ssd
+  # replication_google_drive est A_SOURCER : approximation validée = facteur CCF Google Cloud Storage.
+  replication: { bas: replication_aws_s3, central: replication_gcp_cloud_storage, haut: replication_gcp_cloud_storage }
+  storage_lifetime_years: { bas: 4, central: 5, haut: 6 }
+  vcpu_hours_per_year: { bas: 50, central: 10, haut: 2 }    # recalculs à la demande (Apps Script, web, mobile)
+  memory_gb_per_vcpu: 2
+  utilization: 0.5
+
+sensibilite:
+  org_share: [0.0001, 0.001, 0.005, 0.02, 0.1, 1.0]
+
+notes:
+  - "Réplication BYOS : Google ne publie pas le facteur de Drive ; le central utilise le facteur CCF de Google Cloud Storage (2) comme approximation, le bas le facteur S3 (6) par prudence."
+  - "org_share central 0,005 = une plateforme SaaS dont l'infrastructure ci-dessus sert environ 200 organisations."
+  - "Valeurs numériques d'illustration : à remplacer par les données réelles de l'organisation."
