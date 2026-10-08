@@ -54,6 +54,9 @@ structory-carbon examples/org_exemple.yaml --out examples/
 # ou sans installation :
 python -m structory_carbon examples/org_exemple.yaml --out examples/
 
+# coût + carbone extrapolés à N organisations (Markdown, JSON et CSV pour le business plan)
+structory-carbon examples/org_exemple.yaml --out examples/ --scale 1,1000,10000,100000
+
 # tests
 pytest
 ```
@@ -63,11 +66,20 @@ hypothèses (chaque hypothèse peut être une valeur unique ou un triplet `bas` 
 `haut`), puis relancez. Le rapport rappelle toutes les hypothèses utilisées et la version des
 facteurs.
 
+## Coût et extrapolation à l'échelle
+
+L'option `--scale` ajoute un **modèle de coût annuel** (EUR HT, vu de l'éditeur, prix publics
+sourcés dans [`factors/prices.yaml`](factors/prices.yaml)) et une extrapolation coût + carbone à
+N organisations, avec séparation socle fixe / coûts variables. Équations et résultats :
+[docs/MODELE_COUT_CARBONE.md](docs/MODELE_COUT_CARBONE.md).
+
 ## Structure
 
 ```
 METHODOLOGIE.md          périmètre, équation, hypothèses, limites
 factors/factors.yaml     facteurs d'impact sourcés et versionnés
+factors/prices.yaml      prix publics sourcés et versionnés (EUR HT)
+docs/                    modèle coût + carbone à l'échelle
 structory_carbon/        bibliothèque Python + CLI
 tests/                   tests pytest
 examples/                profil d'exemple et rapports générés

@@ -1,0 +1,136 @@
+# Structory Carbon — prix publics (coût vu de l'éditeur)
+#
+# Mêmes règles que factors.yaml : valeur, unité, source, URL, date d'accès, version, statut.
+# Aucun prix inventé : sans source vérifiable, `value: null` et `status: A_SOURCER`.
+# Tous les prix sont en EUR HORS TAXES (catalogue OVHcloud France, TVA 20 % non incluse).
+#
+# Source principale : API publique de catalogue OVHcloud (sans authentification).
+#   cloud : https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR  (catalogId 9694)
+#   vps   : https://eu.api.ovh.com/1.0/order/catalog/public/vps?ovhSubsidiary=FR    (catalogId 9773)
+# Le champ `price` du catalogue est exprimé en 1e-8 EUR ; les valeurs ci-dessous sont converties.
+# Conversion annuelle : prix horaire × 8760 h ; prix mensuel × 12.
+
+version: "2026.10.0"
+updated: "2026-10-08"
+
+prices:
+
+  # ---------------------------------------------------------------- compute SaaS (OVH Public Cloud)
+  ovh_b3_8_hour:
+    description: Instance Public Cloud General Purpose b3-8 (2 vCore, 8 Go RAM), à l'heure, région standard
+    value: 0.0512
+    unit: EUR HT/h
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `b3-8.consumption`
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  ovh_b3_16_hour:
+    description: Instance Public Cloud General Purpose b3-16 (4 vCore, 16 Go RAM), à l'heure
+    value: 0.1023
+    unit: EUR HT/h
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `b3-16.consumption`
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  ovh_b3_32_hour:
+    description: Instance Public Cloud General Purpose b3-32 (8 vCore, 32 Go RAM), à l'heure
+    value: 0.2046
+    unit: EUR HT/h
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `b3-32.consumption`
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  ovh_vcpu_hour:
+    description: Prix d'un vCore b3 avec 4 Go de RAM, à l'heure (capacité ajoutée au-delà du socle SaaS)
+    value: 0.0256
+    unit: EUR HT/(vCPU·h)
+    status: DERIVE
+    formula: ovh_b3_8_hour / 2 = 0.0512 / 2 (identique pour b3-16 / 4 et b3-32 / 8 à l'arrondi près)
+    source: Calculé à partir des prix b3 du catalogue OVHcloud FR
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  # ---------------------------------------------------------------- stockage SaaS
+  ovh_block_high_speed_month:
+    description: Volume Block Storage high-speed (base de données), par Go et par mois
+    value: 0.086
+    unit: EUR HT/(Go·mois)
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `volume.high-speed.monthly.postpaid`
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  ovh_volume_backup_hour:
+    description: Volume Backup (sauvegarde de volume), par Go et par heure
+    value: 0.000015
+    unit: EUR HT/(Go·h)
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `volume-backup.storage.hour.consumption`
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  ovh_object_standard_hour:
+    description: Object Storage Standard (pièces jointes), par Go et par heure
+    value: 0.00000972
+    unit: EUR HT/(Go·h)
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `storage-standard.consumption` (mensuel `storage-standard.monthly.postpaid` = 0,007 EUR/Go)
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  # ---------------------------------------------------------------- réseau
+  ovh_egress_instance:
+    description: Trafic sortant d'une instance Public Cloud (région standard), par Go
+    value: 0.0
+    unit: EUR HT/Go
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `bandwidth_instance_out.consumption` (prix 0)
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  # ---------------------------------------------------------------- infrastructure
+  ovh_load_balancer_s_month:
+    description: Load Balancer Octavia taille S, par mois
+    value: 6.0
+    unit: EUR HT/mois
+    status: SOURCE
+    source: Catalogue public OVHcloud FR, addon planCode `octavia-loadbalancer.loadbalancer-s.month.consumption`
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/cloud?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9694
+
+  # ---------------------------------------------------------------- socle BYOS (VPS)
+  ovh_vps1_2026_month:
+    description: VPS-1 2026 (4 vCore, 8 Go RAM, 75 Go NVMe, trafic illimité), sans engagement, par mois
+    value: 6.49
+    unit: EUR HT/mois
+    status: SOURCE
+    source: >
+      Catalogue public OVHcloud FR, plan `vps-2025-model1` (« VPS-1 2026 »), prix mensuel sans engagement.
+      Caractéristiques (4 vCore, 8 Go, 75 Go, trafic illimité) : fiche vpsbenchmarks.com du plan.
+    url: https://eu.api.ovh.com/1.0/order/catalog/public/vps?ovhSubsidiary=FR
+    accessed: "2026-10-08"
+    source_version: catalogId 9773 ; specs https://www.vpsbenchmarks.com/hosters/ovhcloud/plans/vps-1
+
+  # ---------------------------------------------------------------- exploitation
+  exploitation_hour:
+    description: Coût horaire chargé d'une personne d'exploitation (astreinte, mises à jour, incidents)
+    value: null
+    unit: EUR/h
+    status: A_SOURCER
+    source: Pas de grille publique retenue au 2026-10-08 (dépend du statut, du pays, de l'externalisation).
+    url: null
+    accessed: "2026-10-08"
+    source_version: null
+    note: "Le poste exploitation n'est chiffré que si le profil donne une hypothèse explicite ; sinon il est affiché « non chiffré »."

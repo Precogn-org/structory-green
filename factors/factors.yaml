@@ -8,8 +8,8 @@
 #
 # Toute modification d'une valeur = nouvelle version de ce fichier (champ `version` ci-dessous).
 
-version: "2026.10.0"
-updated: "2026-10-07"
+version: "2026.10.1"
+updated: "2026-10-08"
 
 factors:
 
@@ -95,6 +95,16 @@ factors:
     url: https://datacenters.google/efficiency/
     accessed: "2026-10-07"
     source_version: rapport 2025
+
+  pue_ovh:
+    description: PUE moyen du groupe OVHcloud, exercice 2025 (ISO 30134-2)
+    value: 1.24
+    unit: sans unité
+    status: SOURCE
+    source: OVHcloud, « PUE, WUE, REF values - Fiscal Year 2025 », ligne OVH Group (sites de 1.19 à 1.36)
+    url: https://www.ovhcloud.com/sites/default/files/external_files/kpis_fy25.pdf
+    accessed: "2026-10-08"
+    source_version: KPIs FY25
 
   # ---------------------------------------------------------------- stockage (énergie)
   storage_ssd_energy:

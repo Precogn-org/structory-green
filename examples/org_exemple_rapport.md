@@ -1,6 +1,6 @@
 # Rapport Structory Carbon — Organisation exemple (fictive)
 
-Outil `structory-carbon` 0.1.0 · facteurs version `2026.10.0` · méthode : METHODOLOGIE.md (V0.1)
+Outil `structory-carbon` 0.1.0 · facteurs version `2026.10.1` · méthode : METHODOLOGIE.md (V0.1)
 
 ## Résultat
 
@@ -70,6 +70,7 @@ Notes du profil :
 
 - Réplication BYOS : Google ne publie pas le facteur de Drive ; le central utilise le facteur CCF de Google Cloud Storage (2) comme approximation, le bas le facteur S3 (6) par prudence.
 - org_share central 0,005 = une plateforme SaaS dont l'infrastructure ci-dessus sert environ 200 organisations.
+- Échelle : vCPU SaaS permanents par organisation = org_share × vCPU du socle (12) ; heures vCPU BYOS par organisation = byos.vcpu_hours_per_year, servies par le VPS socle.
 - Valeurs numériques d'illustration : à remplacer par les données réelles de l'organisation.
 
 ## Facteurs utilisés

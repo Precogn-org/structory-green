@@ -50,10 +50,40 @@ byos:
   memory_gb_per_vcpu: 2
   utilization: 0.5
 
+# ---------------------------------------------------------------- échelle (coût + carbone, N organisations)
+# Voir docs/MODELE_COUT_CARBONE.md. Les identifiants `ovh_*` renvoient à factors/prices.yaml.
+echelle:
+  tailles: [1, 1000, 10000, 100000]
+  saas:
+    prix_instances: [ovh_b3_32_hour, ovh_b3_16_hour]   # un prix par saas.environments (8 vCPU/32 Go, 4 vCPU/16 Go)
+    load_balancers: 1
+    prix_load_balancer: ovh_load_balancer_s_month
+    utilisation_capacite_ajoutee: 0.2                  # même taux que la production
+    memoire_par_vcpu_gb: 4                             # ratio des instances b3 (catalogue OVH)
+    egress_gb_par_org: { bas: 1, central: 5, haut: 20 }
+    prix_egress: ovh_egress_instance
+    exploitation_eur_an: null                          # prix À SOURCER : non chiffré
+  byos:
+    # Socle = VPS de production PreCogn (mesure interne 08/10/2026, lecture seule) :
+    # OVH, 7 751 Mo de RAM sans swap ; API analyzor 4 workers ~0,8 Go ; modèle IA local
+    # qwen2.5-coder:3b 2 092 Mo chargé à la demande ; le reste sert aux sessions de
+    # développement et est exclu. Pas de mesure CPU / réseau / disque par organisation.
+    prix_vps: ovh_vps1_2026_month                      # VPS-1 2026, 4 vCore, 8 Go
+    vps_vcpu: 4
+    vps_ram_gb: 7.751                                  # mesure interne 08/10/2026
+    ram_production_gb: { bas: 7.751, central: 2.892, haut: 0.8 }   # VPS entier / API + IA / API seule
+    utilisation_max: 0.5                               # charge CPU cible avant d'ajouter un VPS (HYPOTHESE)
+    grid: { bas: grid_intensity_eu27, central: grid_intensity_fr, haut: grid_intensity_fr }  # VPS supposé en France
+    pue: pue_ovh
+    exploitation_eur_an: null                          # prix À SOURCER : non chiffré
+  organisation:
+    stockage_existant_suffisant: true                  # le journal tient dans le quota existant : 0 € marginal
+
 sensibilite:
   org_share: [0.0001, 0.001, 0.005, 0.02, 0.1, 1.0]
 
 notes:
   - "Réplication BYOS : Google ne publie pas le facteur de Drive ; le central utilise le facteur CCF de Google Cloud Storage (2) comme approximation, le bas le facteur S3 (6) par prudence."
   - "org_share central 0,005 = une plateforme SaaS dont l'infrastructure ci-dessus sert environ 200 organisations."
+  - "Échelle : vCPU SaaS permanents par organisation = org_share × vCPU du socle (12) ; heures vCPU BYOS par organisation = byos.vcpu_hours_per_year, servies par le VPS socle."
   - "Valeurs numériques d'illustration : à remplacer par les données réelles de l'organisation."
