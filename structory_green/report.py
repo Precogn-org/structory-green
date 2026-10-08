@@ -34,7 +34,7 @@ def build_report(profile: dict[str, Any], factors: FactorSet) -> dict[str, Any]:
                 hypotheses.setdefault(name, {})[scen] = p["value"]
 
     return {
-        "outil": "structory-carbon",
+        "outil": "structory-green",
         "version_outil": __version__,
         "version_facteurs": factors.version,
         "organisation": profile.get("organisation", "(sans nom)"),
@@ -69,9 +69,9 @@ def to_markdown(rep: dict[str, Any]) -> str:
     f = rep["fourchette_evite_kgco2e"]
     res = rep["resultats"]
     L: list[str] = []
-    L.append(f"# Rapport Structory Carbon — {rep['organisation']}")
+    L.append(f"# Rapport Structory Green — {rep['organisation']}")
     L.append("")
-    L.append(f"Outil `structory-carbon` {rep['version_outil']} · facteurs version "
+    L.append(f"Outil `structory-green` {rep['version_outil']} · facteurs version "
              f"`{rep['version_facteurs']}` · méthode : METHODOLOGIE.md (V0.1)")
     L.append("")
     L.append("## Résultat")

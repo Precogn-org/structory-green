@@ -1,4 +1,4 @@
-"""CLI : structory-carbon <profil.yaml> [--out DOSSIER] [--factors FICHIER]."""
+"""CLI : structory-green <profil.yaml> [--out DOSSIER] [--factors FICHIER]."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from .report import build_report, to_markdown
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(
-        prog="structory-carbon",
+        prog="structory-green",
         description="Estime le CO2e évité par BYOS + Structory face à un SaaS de référence.",
     )
     ap.add_argument("profile", type=Path, help="profil d'organisation (YAML)")

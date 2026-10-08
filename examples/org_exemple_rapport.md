@@ -1,6 +1,6 @@
-# Rapport Structory Carbon — Organisation exemple (fictive)
+# Rapport Structory Green — Organisation exemple (fictive)
 
-Outil `structory-carbon` 0.1.0 · facteurs version `2026.10.0` · méthode : METHODOLOGIE.md (V0.1)
+Outil `structory-green` 0.1.0 · facteurs version `2026.10.0` · méthode : METHODOLOGIE.md (V0.1)
 
 ## Résultat
 

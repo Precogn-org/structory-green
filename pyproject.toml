@@ -3,7 +3,7 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "structory-carbon"
+name = "structory-green"
 version = "0.1.0"
 description = "Estimation du CO2e évité par BYOS + Structory face à un SaaS de référence"
 readme = "README.md"
@@ -15,10 +15,10 @@ dependencies = ["PyYAML>=6"]
 test = ["pytest>=7"]
 
 [project.scripts]
-structory-carbon = "structory_carbon.cli:main"
+structory-green = "structory_green.cli:main"
 
 [tool.setuptools]
-packages = ["structory_carbon"]
+packages = ["structory_green"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
