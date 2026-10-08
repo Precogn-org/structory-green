@@ -208,7 +208,7 @@ def _f(x: float, nd: int = 0) -> str:
 
 def to_markdown(results: dict[str, list[dict[str, Any]]], factors: FactorSet,
                 prices: FactorSet) -> str:
-    L = ["# Coût et carbone à l'échelle — BYOS + Structory face à un SaaS de référence", "",
+    L = ["# Structory Green — coût et carbone à l'échelle — BYOS + Structory face à un SaaS de référence", "",
          f"Facteurs `{factors.version}` · prix `{prices.version}` (EUR HT, catalogue public "
          "OVHcloud FR) · équations : docs/MODELE_COUT_CARBONE.md", "",
          "> Coût vu de l'**éditeur**. Le poste **exploitation** (personnes) n'est pas chiffré "

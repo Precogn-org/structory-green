@@ -1,4 +1,4 @@
-# Modèle coût + carbone à l'échelle — BYOS + Structory face à un SaaS de référence
+# Structory Green — modèle coût + carbone à l'échelle (BYOS + Structory face à un SaaS de référence)
 
 > Statut : **V0.1, méthode de travail.** Complète [METHODOLOGIE.md](../METHODOLOGIE.md) (carbone
 > pour une organisation) avec un **coût annuel** et une **extrapolation à N organisations**.
@@ -130,7 +130,7 @@ carbone).
 
 ## 6. Résultats (exemple, scénario central et fourchette bas–haut)
 
-Généré par `structory-carbon examples/org_exemple.yaml --out examples/ --scale 1,1000,10000,100000`.
+Généré par `structory-green examples/org_exemple.yaml --out examples/ --scale 1,1000,10000,100000`.
 Détail : [`examples/org_exemple_echelle.md`](../examples/org_exemple_echelle.md). CSV pour le
 business plan : [`examples/org_exemple_echelle.csv`](../examples/org_exemple_echelle.csv)
 (séparateur `;`, virgule décimale).

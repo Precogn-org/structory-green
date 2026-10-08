@@ -1,4 +1,4 @@
-# Méthodologie — Structory Carbon (BYOS Carbon) V0.1
+# Méthodologie carbone — Structory Green V0.1
 
 > Statut : **V0.1, méthode de travail, non revue par un tiers.** Ce document décrit comment le
 > module estime les émissions de gaz à effet de serre (en kg CO2e) **évitées** par une architecture

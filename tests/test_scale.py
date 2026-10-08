@@ -5,10 +5,10 @@ from pathlib import Path
 import pytest
 import yaml
 
-from structory_carbon.cli import main
-from structory_carbon.factors import MissingFactorError, load_factors, load_prices
-from structory_carbon.model import ProfileError
-from structory_carbon.scale import CSV_COLUMNS, scale, scale_once, to_csv
+from structory_green.cli import main
+from structory_green.factors import MissingFactorError, load_factors, load_prices
+from structory_green.model import ProfileError
+from structory_green.scale import CSV_COLUMNS, scale, scale_once, to_csv
 
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLE = ROOT / "examples" / "org_exemple.yaml"
@@ -137,7 +137,7 @@ def test_cli_scale(tmp_path):
     data = json.loads((tmp_path / "org_exemple_echelle.json").read_text(encoding="utf-8"))
     assert [r["n_orgs"] for r in data["resultats"]["central"]] == [1, 1000]
     assert (tmp_path / "org_exemple_echelle.csv").exists()
-    assert (tmp_path / "org_exemple_echelle.md").read_text(encoding="utf-8").startswith("# Coût")
+    assert (tmp_path / "org_exemple_echelle.md").read_text(encoding="utf-8").startswith("# Structory Green")
 
 
 def test_committed_scale_csv_is_up_to_date(profile, factors, prices):

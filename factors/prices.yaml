@@ -1,4 +1,4 @@
-# Structory Carbon — prix publics (coût vu de l'éditeur)
+# Structory Green — prix publics (coût vu de l'éditeur)
 #
 # Mêmes règles que factors.yaml : valeur, unité, source, URL, date d'accès, version, statut.
 # Aucun prix inventé : sans source vérifiable, `value: null` et `status: A_SOURCER`.

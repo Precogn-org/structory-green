@@ -5,10 +5,10 @@ from pathlib import Path
 import pytest
 import yaml
 
-from structory_carbon.cli import main
-from structory_carbon.factors import MissingFactorError, load_factors
-from structory_carbon.model import POSTES, ProfileError, compute, compute_once, sensitivity
-from structory_carbon.report import build_report, to_markdown
+from structory_green.cli import main
+from structory_green.factors import MissingFactorError, load_factors
+from structory_green.model import POSTES, ProfileError, compute, compute_once, sensitivity
+from structory_green.report import build_report, to_markdown
 
 ROOT = Path(__file__).resolve().parent.parent
 EXAMPLE = ROOT / "examples" / "org_exemple.yaml"

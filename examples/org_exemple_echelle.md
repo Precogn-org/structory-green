@@ -1,4 +1,4 @@
-# Coût et carbone à l'échelle — BYOS + Structory face à un SaaS de référence
+# Structory Green — coût et carbone à l'échelle — BYOS + Structory face à un SaaS de référence
 
 Facteurs `2026.10.1` · prix `2026.10.0` (EUR HT, catalogue public OVHcloud FR) · équations : docs/MODELE_COUT_CARBONE.md
 
