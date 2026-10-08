@@ -182,8 +182,10 @@ def compute_once(profile: dict[str, Any], factors: FactorSet, scenario: str,
     ef_vcpu = r.factor("embodied_vcpu_year_aws_t3_medium")
     s_tb = sum(s_gb.values()) / 1000
     b_tb = sum(b_gb.values()) / 1000
-    saas_res["fabrication"] = s_tb * _embodied_per_tb(r, s_media) / s_life + s_vcpu_years * ef_vcpu
-    byos_res["fabrication"] = b_tb * _embodied_per_tb(r, b_media) / b_life + b_vcpu_years * ef_vcpu
+    s_fab_sto = s_tb * _embodied_per_tb(r, s_media) / s_life
+    b_fab_sto = b_tb * _embodied_per_tb(r, b_media) / b_life
+    saas_res["fabrication"] = s_fab_sto + s_vcpu_years * ef_vcpu
+    byos_res["fabrication"] = b_fab_sto + b_vcpu_years * ef_vcpu
 
     saas_total = sum(saas_res[p] for p in POSTES)
     byos_total = sum(byos_res[p] for p in POSTES)
@@ -198,6 +200,17 @@ def compute_once(profile: dict[str, Any], factors: FactorSet, scenario: str,
         "byos_kgco2e": {**byos_res, "total": byos_total},
         "evite_kgco2e": {**{p: saas_res[p] - byos_res[p] for p in POSTES},
                          "total": saas_total - byos_total},
+        # Détail utilisé par le modèle d'échelle (scale.py) : part liée aux données, hors compute.
+        "donnees_kgco2e": {
+            "saas": sum(saas_res[p] for p in ("stockage", "replication_sauvegardes",
+                                              "environnements", "reseau")) + s_fab_sto,
+            "byos": sum(byos_res[p] for p in ("stockage", "replication_sauvegardes",
+                                              "environnements", "reseau")) + b_fab_sto,
+        },
+        "volumes_cout_gb": {
+            "saas_bloc_base": vd, "saas_bloc": vd * r_db * (1 + n_env), "saas_sauvegarde": vd * bcp,
+            "saas_objet": a, "byos_journal": vj,
+        },
         "parametres": r.used,
     }
 

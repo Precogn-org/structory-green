@@ -1,7 +1,7 @@
 {
   "outil": "structory-green",
   "version_outil": "0.1.0",
-  "version_facteurs": "2026.10.0",
+  "version_facteurs": "2026.10.1",
   "organisation": "Organisation exemple (fictive)",
   "unite": "kgCO2e/an",
   "fourchette_evite_kgco2e": {
@@ -45,6 +45,17 @@
         "reseau": 0.00120228624,
         "fabrication": 0.4097598641095891,
         "total": 0.9188103793381651
+      },
+      "donnees_kgco2e": {
+        "saas": 0.432179876957568,
+        "byos": 0.002760487414272
+      },
+      "volumes_cout_gb": {
+        "saas_bloc_base": 0.21599999999999997,
+        "saas_bloc": 0.8639999999999999,
+        "saas_sauvegarde": 0.43199999999999994,
+        "saas_objet": 5.0,
+        "byos_journal": 0.10799999999999998
       },
       "parametres": {
         "unite_fonctionnelle.entries_per_month": {
@@ -257,6 +268,17 @@
         "fabrication": 0.26211901324200915,
         "total": 0.40571840804333714
       },
+      "donnees_kgco2e": {
+        "saas": 0.360580367779088,
+        "byos": 0.009971655042816
+      },
+      "volumes_cout_gb": {
+        "saas_bloc_base": 0.16199999999999998,
+        "saas_bloc": 0.32399999999999995,
+        "saas_sauvegarde": 0.16199999999999998,
+        "saas_objet": 5.0,
+        "byos_journal": 0.10799999999999998
+      },
       "parametres": {
         "unite_fonctionnelle.entries_per_month": {
           "value": 2000.0,
@@ -467,6 +489,17 @@
         "reseau": 0.00494263944,
         "fabrication": 1.0551273648401824,
         "total": 3.5278396626381476
+      },
+      "donnees_kgco2e": {
+        "saas": 0.7353870622215167,
+        "byos": 0.0023882474142719995
+      },
+      "volumes_cout_gb": {
+        "saas_bloc_base": 0.32399999999999995,
+        "saas_bloc": 5.831999999999999,
+        "saas_sauvegarde": 2.268,
+        "saas_objet": 5.0,
+        "byos_journal": 0.10799999999999998
       },
       "parametres": {
         "unite_fonctionnelle.entries_per_month": {
@@ -962,6 +995,7 @@
   "notes_profil": [
     "Réplication BYOS : Google ne publie pas le facteur de Drive ; le central utilise le facteur CCF de Google Cloud Storage (2) comme approximation, le bas le facteur S3 (6) par prudence.",
     "org_share central 0,005 = une plateforme SaaS dont l'infrastructure ci-dessus sert environ 200 organisations.",
+    "Échelle : vCPU SaaS permanents par organisation = org_share × vCPU du socle (12) ; heures vCPU BYOS par organisation = byos.vcpu_hours_per_year, servies par le VPS socle.",
     "Valeurs numériques d'illustration : à remplacer par les données réelles de l'organisation."
   ]
 }

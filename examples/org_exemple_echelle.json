@@ -1,0 +1,1896 @@
+{
+  "version_facteurs": "2026.10.1",
+  "version_prix": "2026.10.0",
+  "resultats": {
+    "bas": [
+      {
+        "scenario": "bas",
+        "n_orgs": 1,
+        "saas": {
+          "cout_eur": {
+            "stockage": 0.59292,
+            "replication_sauvegardes": 0.18847079999999997,
+            "compute": 2688.444,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 2761.2253908,
+            "fixe": 2760.444,
+            "variable": 0.7813907999998264,
+            "par_org": 2761.2253908
+          },
+          "kgco2e": {
+            "total": 99.8758156328351,
+            "fixe_socle": 99.515235265056,
+            "par_org": 99.8758156328351
+          },
+          "vcpu_permanents": 12.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 77.88,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 77.88,
+            "fixe": 77.88,
+            "variable": 0.0,
+            "par_org": 77.88
+          },
+          "kgco2e": {
+            "total": 19.122330034484733,
+            "fixe_socle_au_repos": 19.07644029144192,
+            "par_org": 19.122330034484733
+          },
+          "vps_supplementaires": 0,
+          "part_vps_socle": 1.0,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 2683.3453907999997,
+        "evite_kgco2e": 80.75348559835037,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.001,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 50.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.2099,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_eu27",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "bas",
+        "n_orgs": 1000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 592.92,
+            "replication_sauvegardes": 188.47079999999997,
+            "compute": 2688.444,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 3541.8348,
+            "fixe": 2760.444,
+            "variable": 781.3908000000001,
+            "par_org": 3.5418348
+          },
+          "kgco2e": {
+            "total": 460.09560304414396,
+            "fixe_socle": 99.515235265056,
+            "par_org": 0.46009560304414393
+          },
+          "vcpu_permanents": 12.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 233.64,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 233.64,
+            "fixe": 77.88,
+            "variable": 155.76,
+            "par_org": 0.23364
+          },
+          "kgco2e": {
+            "total": 103.11906391714174,
+            "fixe_socle_au_repos": 19.07644029144192,
+            "par_org": 0.10311906391714175
+          },
+          "vps_supplementaires": 2,
+          "part_vps_socle": 1.0,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 3308.1948,
+        "evite_kgco2e": 356.9765391270022,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.001,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 50.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.2099,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_eu27",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "bas",
+        "n_orgs": 10000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 5929.2,
+            "replication_sauvegardes": 1884.7079999999996,
+            "compute": 26908.092,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 34794.0,
+            "fixe": 2760.444,
+            "variable": 32033.556,
+            "par_org": 3.4794
+          },
+          "kgco2e": {
+            "total": 4638.971284739456,
+            "fixe_socle": 99.515235265056,
+            "par_org": 0.4638971284739456
+          },
+          "vcpu_permanents": 120.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 2258.52,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 2258.52,
+            "fixe": 77.88,
+            "variable": 2180.64,
+            "par_org": 0.225852
+          },
+          "kgco2e": {
+            "total": 1012.1141988799756,
+            "fixe_socle_au_repos": 19.07644029144192,
+            "par_org": 0.10121141988799756
+          },
+          "vps_supplementaires": 28,
+          "part_vps_socle": 1.0,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 32535.48,
+        "evite_kgco2e": 3626.8570858594803,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.001,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 50.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.2099,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_eu27",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "bas",
+        "n_orgs": 100000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 59292.0,
+            "replication_sauvegardes": 18847.079999999998,
+            "compute": 269104.57200000004,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 347315.65200000006,
+            "fixe": 2760.444,
+            "variable": 344555.20800000004,
+            "par_org": 3.4731565200000007
+          },
+          "kgco2e": {
+            "total": 46427.72810169257,
+            "fixe_socle": 99.515235265056,
+            "par_org": 0.4642772810169257
+          },
+          "vcpu_permanents": 1200.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 22273.68,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 22273.68,
+            "fixe": 77.88,
+            "variable": 22195.8,
+            "par_org": 0.2227368
+          },
+          "kgco2e": {
+            "total": 10044.83622763399,
+            "fixe_socle_au_repos": 19.07644029144192,
+            "par_org": 0.10044836227633991
+          },
+          "vps_supplementaires": 285,
+          "part_vps_socle": 1.0,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 325041.97200000007,
+        "evite_kgco2e": 36382.89187405858,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.001,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 50.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.2099,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_eu27",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      }
+    ],
+    "central": [
+      {
+        "scenario": "central",
+        "n_orgs": 1,
+        "saas": {
+          "cout_eur": {
+            "stockage": 0.648648,
+            "replication_sauvegardes": 0.7255007999999998,
+            "compute": 2688.444,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 2761.8181488,
+            "fixe": 2760.444,
+            "variable": 1.3741488000000572,
+            "par_org": 2761.8181488
+          },
+          "kgco2e": {
+            "total": 99.94741514201357,
+            "fixe_socle": 99.515235265056,
+            "par_org": 99.94741514201357
+          },
+          "vcpu_permanents": 12.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 29.058051864275576,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 29.058051864275576,
+            "fixe": 29.058051864275576,
+            "variable": 0.0,
+            "par_org": 29.058051864275576
+          },
+          "kgco2e": {
+            "total": 3.139882083076273,
+            "fixe_socle_au_repos": 3.135543869262001,
+            "par_org": 3.139882083076273
+          },
+          "vps_supplementaires": 0,
+          "part_vps_socle": 0.3731131466907496,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 2732.7600969357245,
+        "evite_kgco2e": 96.8075330589373,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.005,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 10.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 5.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 2.892,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "central",
+        "n_orgs": 1000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 648.648,
+            "replication_sauvegardes": 725.5007999999998,
+            "compute": 13452.732,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 14898.880799999999,
+            "fixe": 2760.444,
+            "variable": 12138.4368,
+            "par_org": 14.898880799999999
+          },
+          "kgco2e": {
+            "total": 946.6517218597439,
+            "fixe_socle": 99.515235265056,
+            "par_org": 0.9466517218597439
+          },
+          "vcpu_permanents": 60.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 106.93805186427556,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 106.93805186427556,
+            "fixe": 29.058051864275576,
+            "variable": 77.88,
+            "par_org": 0.10693805186427556
+          },
+          "kgco2e": {
+            "total": 15.87749230685688,
+            "fixe_socle_au_repos": 3.135543869262001,
+            "par_org": 0.01587749230685688
+          },
+          "vps_supplementaires": 1,
+          "part_vps_socle": 0.3731131466907496,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 14791.942748135723,
+        "evite_kgco2e": 930.774229552887,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.005,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 10.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 5.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 2.892,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "central",
+        "n_orgs": 10000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 6486.4800000000005,
+            "replication_sauvegardes": 7255.007999999998,
+            "compute": 134550.972,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 148364.46000000002,
+            "fixe": 2760.444,
+            "variable": 145604.01600000003,
+            "par_org": 14.836446000000002
+          },
+          "kgco2e": {
+            "total": 9504.532472895455,
+            "fixe_socle": 99.515235265056,
+            "par_org": 0.9504532472895455
+          },
+          "vcpu_permanents": 600.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 496.33805186427554,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 496.33805186427554,
+            "fixe": 29.058051864275576,
+            "variable": 467.28,
+            "par_org": 0.04963380518642756
+          },
+          "kgco2e": {
+            "total": 96.94008975191927,
+            "fixe_socle_au_repos": 3.135543869262001,
+            "par_org": 0.009694008975191928
+          },
+          "vps_supplementaires": 6,
+          "part_vps_socle": 0.3731131466907496,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 147868.12194813575,
+        "evite_kgco2e": 9407.592383143536,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.005,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 10.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 5.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 2.892,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "central",
+        "n_orgs": 100000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 64864.8,
+            "replication_sauvegardes": 72550.07999999999,
+            "compute": 1345533.372,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 1483020.2519999999,
+            "fixe": 2760.444,
+            "variable": 1480259.808,
+            "par_org": 14.830202519999999
+          },
+          "kgco2e": {
+            "total": 95083.33998325258,
+            "fixe_socle": 99.515235265056,
+            "par_org": 0.9508333998325258
+          },
+          "vcpu_permanents": 6000.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 4468.218051864275,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 4468.218051864275,
+            "fixe": 29.058051864275576,
+            "variable": 4439.16,
+            "par_org": 0.044682180518642756
+          },
+          "kgco2e": {
+            "total": 915.9697988258662,
+            "fixe_socle_au_repos": 3.135543869262001,
+            "par_org": 0.009159697988258662
+          },
+          "vps_supplementaires": 57,
+          "part_vps_socle": 0.3731131466907496,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 1478552.0339481356,
+        "evite_kgco2e": 94167.3701844267,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.005,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.135,
+            "kind": "FACTEUR",
+            "factor": "pue_aws",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 10.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 5.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 2.892,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      }
+    ],
+    "haut": [
+      {
+        "scenario": "haut",
+        "n_orgs": 1,
+        "saas": {
+          "cout_eur": {
+            "stockage": 0.7601039999999999,
+            "replication_sauvegardes": 5.9822712,
+            "compute": 2688.444,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 2767.1863752,
+            "fixe": 2760.444,
+            "variable": 6.7423751999999695,
+            "par_org": 2767.1863752
+          },
+          "kgco2e": {
+            "total": 131.44795711815752,
+            "fixe_socle": 130.712570055936,
+            "par_org": 131.44795711815752
+          },
+          "vcpu_permanents": 12.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 8.038188620823119,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 8.038188620823119,
+            "fixe": 8.038188620823119,
+            "variable": 0.0,
+            "par_org": 8.038188620823119
+          },
+          "kgco2e": {
+            "total": 0.8700741576353511,
+            "fixe_socle_au_repos": 0.8673703649410791,
+            "par_org": 0.8700741576353511
+          },
+          "vps_supplementaires": 0,
+          "part_vps_socle": 0.10321248871113405,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 2759.148186579177,
+        "evite_kgco2e": 130.57788296052217,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.02,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.56,
+            "kind": "FACTEUR",
+            "factor": "pue_industry_avg",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 2.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 20.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 0.8,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "haut",
+        "n_orgs": 1000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 760.1039999999999,
+            "replication_sauvegardes": 5982.271199999999,
+            "compute": 53818.812000000005,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 60633.18720000001,
+            "fixe": 2760.444,
+            "variable": 57872.743200000004,
+            "par_org": 60.63318720000001
+          },
+          "kgco2e": {
+            "total": 3459.944105767373,
+            "fixe_socle": 130.712570055936,
+            "par_org": 3.459944105767373
+          },
+          "vcpu_permanents": 240.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 85.91818862082312,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 85.91818862082312,
+            "fixe": 8.038188620823119,
+            "variable": 77.88,
+            "par_org": 0.08591818862082312
+          },
+          "kgco2e": {
+            "total": 11.974897682535959,
+            "fixe_socle_au_repos": 0.8673703649410791,
+            "par_org": 0.011974897682535958
+          },
+          "vps_supplementaires": 1,
+          "part_vps_socle": 0.10321248871113405,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 60547.26901137918,
+        "evite_kgco2e": 3447.969208084837,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.02,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.56,
+            "kind": "FACTEUR",
+            "factor": "pue_industry_avg",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 2.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 20.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 0.8,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "haut",
+        "n_orgs": 10000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 7601.039999999999,
+            "replication_sauvegardes": 59822.71199999999,
+            "compute": 538211.772,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 605707.524,
+            "fixe": 2760.444,
+            "variable": 602947.08,
+            "par_org": 60.570752399999996
+          },
+          "kgco2e": {
+            "total": 34651.69109882342,
+            "fixe_socle": 130.712570055936,
+            "par_org": 3.4651691098823423
+          },
+          "vcpu_permanents": 2400.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 163.7981886208231,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 163.7981886208231,
+            "fixe": 8.038188620823119,
+            "variable": 155.76,
+            "par_org": 0.016379818862082313
+          },
+          "kgco2e": {
+            "total": 44.71276655430684,
+            "fixe_socle_au_repos": 0.8673703649410791,
+            "par_org": 0.004471276655430684
+          },
+          "vps_supplementaires": 2,
+          "part_vps_socle": 0.10321248871113405,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 605543.7258113791,
+        "evite_kgco2e": 34606.978332269115,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.02,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.56,
+            "kind": "FACTEUR",
+            "factor": "pue_industry_avg",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 2.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 20.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 0.8,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      },
+      {
+        "scenario": "haut",
+        "n_orgs": 100000,
+        "saas": {
+          "cout_eur": {
+            "stockage": 76010.4,
+            "replication_sauvegardes": 598227.12,
+            "compute": 5382141.372,
+            "reseau_egress": 0.0,
+            "infrastructure": 72.0,
+            "exploitation": null,
+            "total": 6056450.892,
+            "fixe": 2760.444,
+            "variable": 6053690.448,
+            "par_org": 60.56450892
+          },
+          "kgco2e": {
+            "total": 346569.1610293839,
+            "fixe_socle": 130.712570055936,
+            "par_org": 3.465691610293839
+          },
+          "vcpu_permanents": 24000.0
+        },
+        "byos": {
+          "cout_eur": {
+            "stockage": 0.0,
+            "replication_sauvegardes": 0.0,
+            "compute": 942.5981886208231,
+            "reseau_egress": 0.0,
+            "infrastructure": 0.0,
+            "exploitation": null,
+            "total": 942.5981886208231,
+            "fixe": 8.038188620823119,
+            "variable": 934.56,
+            "par_org": 0.00942598188620823
+          },
+          "kgco2e": {
+            "total": 372.0914552720156,
+            "fixe_socle_au_repos": 0.8673703649410791,
+            "par_org": 0.0037209145527201557
+          },
+          "vps_supplementaires": 12,
+          "part_vps_socle": 0.10321248871113405,
+          "cout_marginal_organisation_eur": 0.0
+        },
+        "ecart_cout_eur": 6055508.293811379,
+        "evite_kgco2e": 346197.0695741119,
+        "exploitation_chiffree": false,
+        "parametres": {
+          "saas.org_share": {
+            "value": 0.02,
+            "kind": "HYPOTHESE"
+          },
+          "saas.grid": {
+            "value": 0.25654,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_ie",
+            "bound": null
+          },
+          "saas.pue": {
+            "value": 1.56,
+            "kind": "FACTEUR",
+            "factor": "pue_industry_avg",
+            "bound": null
+          },
+          "facteur.memory_energy": {
+            "value": 0.000392,
+            "kind": "FACTEUR",
+            "factor": "memory_energy",
+            "bound": null
+          },
+          "facteur.embodied_vcpu_year_aws_t3_medium": {
+            "value": 1.35,
+            "kind": "FACTEUR",
+            "factor": "embodied_vcpu_year_aws_t3_medium",
+            "bound": null
+          },
+          "facteur.cpu_min_watts_aws": {
+            "value": 0.74,
+            "kind": "FACTEUR",
+            "factor": "cpu_min_watts_aws",
+            "bound": null
+          },
+          "facteur.cpu_max_watts_aws": {
+            "value": 3.5,
+            "kind": "FACTEUR",
+            "factor": "cpu_max_watts_aws",
+            "bound": null
+          },
+          "echelle.saas.utilisation_capacite_ajoutee": {
+            "value": 0.2,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.memoire_par_vcpu_gb": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "byos.vcpu_hours_per_year": {
+            "value": 2.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.grid": {
+            "value": 0.0461,
+            "kind": "FACTEUR",
+            "factor": "grid_intensity_fr",
+            "bound": null
+          },
+          "echelle.byos.pue": {
+            "value": 1.24,
+            "kind": "FACTEUR",
+            "factor": "pue_ovh",
+            "bound": null
+          },
+          "echelle.saas.load_balancers": {
+            "value": 1.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_load_balancer": {
+            "value": 6.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_load_balancer_s_month",
+            "bound": null
+          },
+          "echelle.saas.egress_gb_par_org": {
+            "value": 20.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.saas.prix_egress": {
+            "value": 0.0,
+            "kind": "FACTEUR",
+            "factor": "ovh_egress_instance",
+            "bound": null
+          },
+          "echelle.byos.prix_vps": {
+            "value": 6.49,
+            "kind": "FACTEUR",
+            "factor": "ovh_vps1_2026_month",
+            "bound": null
+          },
+          "echelle.byos.vps_vcpu": {
+            "value": 4.0,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.vps_ram_gb": {
+            "value": 7.751,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.ram_production_gb": {
+            "value": 0.8,
+            "kind": "HYPOTHESE"
+          },
+          "echelle.byos.utilisation_max": {
+            "value": 0.5,
+            "kind": "HYPOTHESE"
+          }
+        }
+      }
+    ]
+  }
+}

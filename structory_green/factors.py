@@ -9,6 +9,7 @@ from typing import Any
 import yaml
 
 DEFAULT_FACTORS_PATH = Path(__file__).resolve().parent.parent / "factors" / "factors.yaml"
+DEFAULT_PRICES_PATH = Path(__file__).resolve().parent.parent / "factors" / "prices.yaml"
 
 REQUIRED_FIELDS = ("value", "unit", "status", "source", "url", "accessed", "source_version")
 STATUSES = ("SOURCE", "DERIVE", "A_SOURCER")
@@ -67,11 +68,11 @@ class FactorSet:
         return [k for k, f in self.factors.items() if f.status == "A_SOURCER"]
 
 
-def load_factors(path: str | Path = DEFAULT_FACTORS_PATH) -> FactorSet:
+def load_factors(path: str | Path = DEFAULT_FACTORS_PATH, section: str = "factors") -> FactorSet:
     with open(path, encoding="utf-8") as fh:
         raw: dict[str, Any] = yaml.safe_load(fh)
     factors: dict[str, Factor] = {}
-    for key, d in raw["factors"].items():
+    for key, d in raw[section].items():
         missing = [f for f in REQUIRED_FIELDS if f not in d]
         if missing:
             raise ValueError(f"Facteur {key!r} : champs manquants {missing}")
@@ -96,3 +97,8 @@ def load_factors(path: str | Path = DEFAULT_FACTORS_PATH) -> FactorSet:
             max=None if d.get("max") is None else float(d["max"]),
         )
     return FactorSet(version=str(raw["version"]), factors=factors)
+
+
+def load_prices(path: str | Path = DEFAULT_PRICES_PATH) -> FactorSet:
+    """Prix publics : même format et mêmes règles que les facteurs (section `prices`)."""
+    return load_factors(path, section="prices")
